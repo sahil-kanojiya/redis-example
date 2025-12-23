@@ -1,0 +1,12 @@
+services:
+  redis:
+    image: redis:7.4.7
+    container_name: my-redis
+    ports:
+      - "6379:6379"   # Redis default port
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--appendonly", "yes"]
+
+volumes:
+  redis-data:
